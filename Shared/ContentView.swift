@@ -11,15 +11,27 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var basicViewModel: BasicViewModel = BasicViewModel()
-    @State var node = "Node1"
     @State var showAlert = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
             VStack{
+                Slider(
+                    value: self.$basicViewModel.percent.value,
+                    in: 0...100,
+                    step: 1,
+                    onEditingChanged: { editing in
+                        if (!editing){
+                            self.basicViewModel.setPercent()
+                        }
+                    },
+                    minimumValueLabel: Text("Off"),
+                    maximumValueLabel: Text("100")
+                ) {
+                    
+                }
                 Text(String(self.basicViewModel.weather.temp))
-                TextField("Node1", text: self.$node).multilineTextAlignment(.center)
                 Button(action: {
                     self.basicViewModel.getWeatherData()
                 }){

@@ -11,9 +11,12 @@ class BasicViewModel: ObservableObject {
        
     @Published var weather: WeatherViewModel = WeatherViewModel(weather: Weather(main: Main(temp: 0.0, pressure: 0, humidity: 0.0), wind: Wind(speed: 0.0, gust: 0.0, deg: 0), dt: 0))
     @Published var regularPost: Int = 8
+    @Published var percent: PercentViewModel = PercentViewModel(percent: Percent(value: 0))
+
 
     init() {
         getWeatherData()
+        getPercent()
     }
     
     func getWeatherData() {
@@ -24,6 +27,22 @@ class BasicViewModel: ObservableObject {
             }
         }
     }
+    
+    func getPercent() {
+        
+        Webservice().getPercent { percent in
+            if let percent = percent {
+                self.percent = PercentViewModel.init(percent: percent)
+            }
+        }
+    }
+    
+    func setPercent() {
+        
+        Webservice().setPercent(percent: percent.percent) { response in
+            print(response)
+        }
+    }
 }
 
 func getCurrentDateString() -> String{
@@ -31,6 +50,16 @@ func getCurrentDateString() -> String{
     let formatter1 = DateFormatter()
     formatter1.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     return formatter1.string(from: today)
+}
+
+extension Date {
+    var millisecondsSince1970:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds: Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
 }
 
 class WeatherViewModel {
@@ -70,15 +99,29 @@ class WeatherViewModel {
     }
 }
 
-extension Date {
-    var millisecondsSince1970:Int {
-        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+class PercentViewModel: ObservableObject {
+    var percent: Percent
+    
+    init(percent: Percent){
+        self.percent = percent
     }
-
-    init(milliseconds: Int) {
-        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    
+    var value: Double {
+        get {
+            if( self.percent.value > 100 || self.percent.value < 0 ){
+                return 0
+            }
+            
+            return Double(self.percent.value)
+        }
+        
+        set {
+            self.percent.value = Int(newValue)
+        }
+        
     }
 }
+
 
 
 

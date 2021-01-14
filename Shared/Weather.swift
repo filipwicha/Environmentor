@@ -28,3 +28,7 @@ struct Wind: Codable {
     let gust: Double
     let deg: Int
 }
+
+struct Percent: Codable {
+    var value: Int
+}
