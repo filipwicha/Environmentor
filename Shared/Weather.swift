@@ -10,23 +10,23 @@ import Foundation
 
 struct Weather: Codable {
     
-    let main: Main
-    let wind: Wind
-    let dt: Int
+    var main: Main
+    var wind: Wind
+    var dt: Int
 }
 
 struct Main: Codable {
     
-    let temp: Double
-    let pressure: Int
-    let humidity: Double
+    var temp: Double
+    var pressure: Int
+    var humidity: Double
 }
 
 struct Wind: Codable {
     
-    let speed: Double
-    let gust: Double
-    let deg: Int
+    var speed: Double
+    var gust: Double
+    var deg: Int
 }
 
 struct Percent: Codable {

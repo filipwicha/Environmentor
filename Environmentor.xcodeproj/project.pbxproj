@@ -17,6 +17,8 @@
 		DC67F1A025AF95440038707C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67F19E25AF95440038707C /* Weather.swift */; };
 		DC67F1AB25AF96C90038707C /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67F1AA25AF96C90038707C /* Webservice.swift */; };
 		DC67F1AC25AF96C90038707C /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67F1AA25AF96C90038707C /* Webservice.swift */; };
+		DC67F1B425B35B680038707C /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67F1B325B35B680038707C /* Slider.swift */; };
+		DC67F1B525B35B680038707C /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67F1B325B35B680038707C /* Slider.swift */; };
 		DC97DD3925AF8FA50033689C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC97DD3825AF8FA50033689C /* ContentView.swift */; };
 		DC97DD3A25AF8FA50033689C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC97DD3825AF8FA50033689C /* ContentView.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,7 @@
 		DC67F19925AF95250038707C /* BasicViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewModel.swift; sourceTree = "<group>"; };
 		DC67F19E25AF95440038707C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		DC67F1AA25AF96C90038707C /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		DC67F1B325B35B680038707C /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		DC97DD3825AF8FA50033689C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +75,7 @@
 				DC67F19925AF95250038707C /* BasicViewModel.swift */,
 				DC5B65AA25AB7FCD007C16FF /* EnvironmentorApp.swift */,
 				DC5B65AC25AB7FD1007C16FF /* Assets.xcassets */,
+				DC67F1B325B35B680038707C /* Slider.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -203,6 +207,7 @@
 				DC67F19A25AF95250038707C /* BasicViewModel.swift in Sources */,
 				DC97DD3A25AF8FA50033689C /* ContentView.swift in Sources */,
 				DC67F1AC25AF96C90038707C /* Webservice.swift in Sources */,
+				DC67F1B425B35B680038707C /* Slider.swift in Sources */,
 				DC5B65BD25AB7FD1007C16FF /* EnvironmentorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +220,7 @@
 				DC67F19B25AF95250038707C /* BasicViewModel.swift in Sources */,
 				DC97DD3925AF8FA50033689C /* ContentView.swift in Sources */,
 				DC67F1AB25AF96C90038707C /* Webservice.swift in Sources */,
+				DC67F1B525B35B680038707C /* Slider.swift in Sources */,
 				DC5B65BE25AB7FD1007C16FF /* EnvironmentorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
